@@ -1,0 +1,31 @@
+---
+import Seo, { type Preload } from "@/components/Seo.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  preload?: Array<Preload>;
+  canonical?: string;
+  image?: string;
+}
+
+const { title, description, preload, canonical, image } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <Seo
+      canonical={canonical}
+      description={description}
+      image={image}
+      preload={preload}
+      title={title}
+    />
+  </head>
+  <body>
+    <main>
+      <slot />
+    </main>
+  </body>
+</html>
