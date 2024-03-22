@@ -1,5 +1,7 @@
 ---
+import Header from "@/components/Header.astro";
 import Seo, { type Preload } from "@/components/Seo.astro";
+import { ViewTransitions } from "astro:transitions";
 
 interface Props {
   title: string;
@@ -22,9 +24,12 @@ const { title, description, preload, canonical, image } = Astro.props;
       preload={preload}
       title={title}
     />
+
+    <ViewTransitions />
   </head>
   <body>
     <main>
+      <Header />
       <slot />
     </main>
   </body>
