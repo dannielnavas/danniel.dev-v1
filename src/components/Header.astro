@@ -1,17 +1,21 @@
-<nav class="">
-  <div class="logo">
-    <img src="" alt="" />
-    <h3>Danniel Dev</h3>
+---
+import Logo from "./Logo.astro";
+---
+
+<nav class="flex justify-between items-center bg-[#102742] text-white p-1">
+  <div class="flex items-center">
+    <Logo class="w-14" />
+    <h1 class="ml-1">Danniel Dev</h1>
   </div>
-  <menu>
-    <li>
-      <a href="">Inico</a>
+  <menu class="flex justify-between items-center gap-5">
+    <li class="list-none mr-1 ml-1">
+      <a href="/" class="no-underline text-white">Inico</a>
     </li>
-    <li>
-      <a href="">Post</a>
+    <li class="list-none mr-1 ml-1">
+      <a class="no-underline text-white" href="/blog">Post</a>
     </li>
-    <li>
-      <a href="">Proyectos</a>
+    <li class="list-none mr-1 ml-1">
+      <a class="no-underline text-white" href="/projects">Proyectos</a>
     </li>
   </menu>
 </nav>
