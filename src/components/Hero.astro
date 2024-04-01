@@ -1,1 +1,66 @@
-<nav class="flex justify-between h-32 w-svw"></nav>
+---
+import Danniel from "./Danniel.astro";
+interface Technology {
+  name: string;
+  icon: string;
+}
+const technologies: Technology[] = [
+  {
+    name: "Angular",
+    icon: "/img/technologies/angular.webp",
+  },
+  {
+    name: "JavaScript",
+    icon: "/img/technologies/javascript.webp",
+  },
+  {
+    name: "TypeScript",
+    icon: "/img/technologies/typescript.webp",
+  },
+  {
+    name: "node.js",
+    icon: "/img/technologies/nodejs.webp",
+  },
+  {
+    name: "NestJS",
+    icon: "/img/technologies/nestjs.webp",
+  },
+  {
+    name: "AWS",
+    icon: "/img/technologies/aws.webp",
+  },
+  {
+    name: "Firebase",
+    icon: "/img/technologies/firebase.webp",
+  },
+];
+---
+
+<header class="flex bg-[#102742]">
+  <section class="flex flex-col w-1/2 justify-center items-center">
+    <article
+      class="bg-white flex h-[140px] w-[436px] rounded-lg items-center justify-center gap-4"
+    >
+      <img src="/img/hero/spock.webp" alt="Spock" class="h-[75px]" />
+      <div class="w-[217px] h-auto">
+        <p class="m-0 font-normal text-sm">Hola, soy</p>
+        <h2 class="m-0 text-2xl font-extrabold leading-6">Danniel Navas</h2>
+        <p class="m-0 font-medium">JavaScript developer.</p>
+      </div>
+    </article>
+    <div class="flex gap-3 mt-6">
+      {
+        technologies.map((technology) => (
+          <img
+            src={technology.icon}
+            alt={technology.name}
+            class="h-[39px] w-[39px] aspect-3/2 object-contain"
+          />
+        ))
+      }
+    </div>
+  </section>
+  <section class="w-1/2">
+    <Danniel />
+  </section>
+</header>
