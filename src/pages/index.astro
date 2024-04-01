@@ -1,6 +1,11 @@
 ---
+import Article from "@/components/Article.astro";
 import Hero from "@/components/Hero.astro";
+import { getArticlesDevto } from "@/functions/articles";
 import Layout from "@/layout/Layout.astro";
+import type { IArticle } from "@/shared/models/article.interface";
+
+const articles: IArticle[] = await getArticlesDevto();
 ---
 
 <Layout
@@ -8,7 +13,27 @@ import Layout from "@/layout/Layout.astro";
   title="Danniel DEV | Daniel Navas: Artículos y Proyectos en Desarrollo de Software"
   canonical="https://danniel.dev"
 >
-  <main>
+  <main class="bg-[#102742]">
     <Hero />
+    <div
+      class="flex flex-col justify-center items-center gap-6 container mx-auto my-auto"
+    >
+      <h2 class="text-3xl font-bold mt-12 ml-32 text-left self-start text-[#7AEC51]">
+        Artículos Recientes
+      </h2>
+      {
+        articles
+          .slice(0, 3)
+          .map((article) => (
+            <Article
+              key={article.id}
+              title={article.title}
+              description={article.description}
+              image={article.cover_image}
+              url={article.url}
+            />
+          ))
+      }
+    </div>
   </main>
 </Layout>
