@@ -1,5 +1,25 @@
 ---
 import Logo from "./Logo.astro";
+
+interface Menu {
+  name: string;
+  url: string;
+}
+
+const menu: Menu[] = [
+  {
+    name: "Inicio",
+    url: "/",
+  },
+  {
+    name: "Post",
+    url: "/blog",
+  },
+  {
+    name: "Proyectos",
+    url: "/projects",
+  },
+];
 ---
 
 <nav class="flex justify-between items-center bg-[#102742] text-white p-1">
@@ -8,14 +28,14 @@ import Logo from "./Logo.astro";
     <h1 class="ml-1">Danniel Dev</h1>
   </div>
   <menu class="flex justify-between items-center gap-5">
-    <li class="list-none mr-1 ml-1">
-      <a href="/" class="no-underline text-white">Inico</a>
-    </li>
-    <li class="list-none mr-1 ml-1">
-      <a class="no-underline text-white" href="/blog">Post</a>
-    </li>
-    <li class="list-none mr-1 ml-1">
-      <a class="no-underline text-white" href="/projects">Proyectos</a>
-    </li>
+    {
+      menu.map(({ name, url }) => (
+        <li class="list-none mr-1 ml-1">
+          <a href={url} class="no-underline text-white">
+            {name}
+          </a>
+        </li>
+      ))
+    }
   </menu>
 </nav>
