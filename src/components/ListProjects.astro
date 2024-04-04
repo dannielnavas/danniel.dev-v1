@@ -1,0 +1,28 @@
+---
+import { getProjectsGithub } from "@/functions/projets";
+
+import type { IProject } from "@/shared/models/project.interface";
+import Project from "./Project.astro";
+
+const projects: IProject[] = await getProjectsGithub();
+---
+
+<div
+  class="flex flex-col justify-center items-center gap-6 container mx-auto my-auto"
+>
+  <h2 class="text-3xl font-bold mt-12 ml-32 text-left self-start text-[#7AEC51]">
+    Proyectos
+  </h2>
+  {
+    projects.map((project: IProject) => (
+      <Project
+        key={project.id}
+        name={project.name}
+        created_at={project.created_at}
+        description={project.description}
+        html_url={project.html_url}
+        homepage={project.homepage}
+      />
+    ))
+  }
+</div>
