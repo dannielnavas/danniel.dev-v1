@@ -1,0 +1,17 @@
+---
+const { name, created_at, description, html_url, homepage } = Astro.props;
+---
+
+<article>
+  <h3>{name}</h3>
+  <p>{created_at}</p>
+  <p>{description}</p>
+  <div class="flex">
+    <a href={html_url}>
+      <img src="/assets/image/github.webp" loading="lazy" alt="github project" />
+    </a>
+    <a href={homepage}>
+      <img src="/assets/image/shared.webp" loading="lazy" alt="shared project" />
+    </a>
+  </div>
+</article>
