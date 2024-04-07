@@ -1,0 +1,12 @@
+---
+import { YouTube } from "astro-embed";
+
+const { videoId, title } = Astro.props;
+---
+
+<YouTube
+  id={videoId}
+  class="rounded-lg w-2/3 h-1/3"
+  title={title}
+  playlabel="Play the video"
+/>
