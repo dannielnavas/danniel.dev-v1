@@ -1,7 +1,6 @@
 ---
 const { name, created_at, description, html_url, homepage } = Astro.props;
 
-// formatear fecha en horario colombiano (GMT-5)
 const date = new Date(created_at);
 const utc = date.getTime() + date.getTimezoneOffset() * 60000;
 const offset = -5;
@@ -14,10 +13,10 @@ const newDate = colombia.toISOString().split("T")[0];
   <p class="text-[#7AEC51] mt-2">{newDate}</p>
   <p class="text-balance mt-6 text-white">{description}</p>
   <div class="flex gap-4 mt-4">
-    <a href={html_url}>
+    <a href={html_url} target="_blank">
       <img src="/img/projects/github.webp" loading="lazy" alt="github project" />
     </a>
-    <a href={homepage}>
+    <a href={homepage} target="_blank">
       <img src="/img/projects/shared.webp" loading="lazy" alt="shared project" />
     </a>
   </div>
