@@ -2,6 +2,7 @@
 import Hero from "@/components/Hero.astro";
 import ListProjects from "@/components/ListProjects.astro";
 import ListsAticles from "@/components/ListsAticles.astro";
+import Youtube from "@/components/Youtube.astro";
 import Layout from "@/layout/Layout.astro";
 ---
 
@@ -14,5 +15,16 @@ import Layout from "@/layout/Layout.astro";
     <Hero />
     <ListsAticles numberItems="3" />
     <ListProjects limit="3" />
+    <section class="flex flex-col items-center justify-center mt-8">
+      <h2
+        class="text-3xl font-bold mt-12 ml-32 text-left self-start text-[#7AEC51] mb-6"
+      >
+        Video
+      </h2>
+      <Youtube
+        videoId="Qh7lxF6tYNQ"
+        title="Instalación y configuración sistema operativo Linux"
+      />
+    </section>
   </main>
 </Layout>
