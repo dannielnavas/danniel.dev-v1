@@ -1,8 +1,9 @@
 ---
+import Footer from "@/components/Footer.astro";
 import Hero from "@/components/Hero.astro";
-import ListNumbers from "@/components/ListNumbers.astro";
-import ListProjects from "@/components/ListProjects.astro";
-import ListsAticles from "@/components/ListsAticles.astro";
+import ListNumbers from "@/components/list/ListNumbers.astro";
+import ListProjects from "@/components/list/ListProjects.astro";
+import ListsAticles from "@/components/list/ListsAticles.astro";
 import Youtube from "@/components/Youtube.astro";
 import Layout from "@/layout/Layout.astro";
 ---
@@ -29,4 +30,5 @@ import Layout from "@/layout/Layout.astro";
     </section>
     <ListNumbers />
   </main>
+  <Footer />
 </Layout>
