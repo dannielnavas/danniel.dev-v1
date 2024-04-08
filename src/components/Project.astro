@@ -13,10 +13,15 @@ const newDate = colombia.toISOString().split("T")[0];
   <p class="text-[#7AEC51] mt-2">{newDate}</p>
   <p class="text-balance mt-6 text-white">{description}</p>
   <div class="flex gap-4 mt-4">
-    <a href={html_url} target="_blank">
+    <a
+      href={html_url}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={"Github"}
+    >
       <img src="/img/projects/github.webp" loading="lazy" alt="github project" />
     </a>
-    <a href={homepage} target="_blank">
+    <a href={homepage} target="_blank" rel="noopener noreferrer" aria-label="Shared">
       <img src="/img/projects/shared.webp" loading="lazy" alt="shared project" />
     </a>
   </div>
