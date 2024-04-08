@@ -1,0 +1,40 @@
+---
+const socialMedia = [
+  {
+    name: "GitHub",
+    url: "https://github.com/dannielnavas",
+    icon: "/img/footer/github.webp",
+  },
+  {
+    name: "LinkedIn",
+    url: "https://www.linkedin.com/in/luis-daniel-gordo-navas/",
+    icon: "/img/footer/linkedin.webp",
+  },
+  //   {
+  //     name: "Twitter",
+  //     url: "https://twitter.com/DevDanniel",
+  //     icon: "",
+  //   },
+  {
+    name: "Instagram",
+    url: "https://www.instagram.com/dannynavas13/",
+    icon: "/img/footer/instagram.webp",
+  },
+];
+---
+
+<footer class="w-svw h-40 bg-white flex mt-6 justify-end items-center gap-4">
+  <p>DannielDev {new Date().getFullYear()}.</p>
+  {
+    socialMedia.map((social) => (
+      <a
+        href={social.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={social.name}
+      >
+        <img src={social.icon} alt={social.name} loading="lazy" />
+      </a>
+    ))
+  }
+</footer>
