@@ -1,0 +1,24 @@
+---
+import { getNumbers } from "@/functions/numbers";
+import type { INumbers } from "@/shared/models/numbers.interface";
+import Card from "./Card.astro";
+
+const numbersDannielDev = await getNumbers();
+
+numbersDannielDev.sort((a, b) => b.quantity - a.quantity);
+---
+
+<div class="flex flex-col items-center">
+  <h2
+    class="text-3xl font-bold mt-12 ml-44 mb-8 text-left self-start text-[#7AEC51]"
+  >
+    Estadísticas
+  </h2>
+  <div class="flex gap-6 container mx-auto my-auto flex-wrap justify-center">
+    {
+      numbersDannielDev.map((project: INumbers, index: number) => (
+        <Card key={index} title={project.name} count={project.quantity} />
+      ))
+    }
+  </div>
+</div>
