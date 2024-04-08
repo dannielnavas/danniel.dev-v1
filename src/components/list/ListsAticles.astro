@@ -1,7 +1,7 @@
 ---
 import { getArticlesDevto } from "@/functions/articles";
 import type { IArticle } from "@/shared/models/article.interface";
-import Article from "./Article.astro";
+import Article from "../Article.astro";
 
 const articles: IArticle[] = await getArticlesDevto();
 

@@ -2,7 +2,7 @@
 import { getProjectsGithub } from "@/functions/projets";
 
 import type { IProject } from "@/shared/models/project.interface";
-import Project from "./Project.astro";
+import Project from "../Project.astro";
 
 const projects: IProject[] = await getProjectsGithub();
 
