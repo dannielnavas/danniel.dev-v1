@@ -33,7 +33,12 @@ const menu: Menu[] = [
     {
       menu.map(({ name, url }) => (
         <li class="list-none mr-1 ml-1">
-          <a href={url} class="no-underline text-white">
+          <a
+            href={url}
+            class="no-underline text-white"
+            rel="noopener noreferrer"
+            aria-label={name}
+          >
             {name}
           </a>
         </li>
