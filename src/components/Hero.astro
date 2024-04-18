@@ -1,47 +1,17 @@
 ---
+import { TECHNOLOGIES } from "@/shared/const/technologies.const";
+import type { Technology } from "@/shared/models/technology.interface";
 import Danniel from "./Danniel.astro";
-interface Technology {
-  name: string;
-  icon: string;
-}
-const technologies: Technology[] = [
-  {
-    name: "Angular",
-    icon: "/img/technologies/angular.webp",
-  },
-  {
-    name: "JavaScript",
-    icon: "/img/technologies/javascript.webp",
-  },
-  {
-    name: "TypeScript",
-    icon: "/img/technologies/typescript.webp",
-  },
-  {
-    name: "node.js",
-    icon: "/img/technologies/nodejs.webp",
-  },
-  {
-    name: "NestJS",
-    icon: "/img/technologies/nestjs.webp",
-  },
-  {
-    name: "AWS",
-    icon: "/img/technologies/aws.webp",
-  },
-  {
-    name: "Firebase",
-    icon: "/img/technologies/firebase.webp",
-  },
-];
+
+const technologies: Technology[] = TECHNOLOGIES;
 ---
 
 <header class="flex bg-[#102742] container mx-auto my-auto">
   <section
-    class="flex flex-col lg:w-1/2 max-sm:w-svw md:w-svw md:mt-8 max-sm:mt-8 justify-center items-center"
+    class="flex flex-col lg:w-1/2 max-sm:w-full md:w-svw md:mt-8 max-sm:mt-8 justify-center items-center"
   >
     <article
-      class="bg-white flex h-[140px] w-[436px] rounded-lg items-center justify-center gap-4"
+      class="bg-white flex h-[140px] w-[436px] rounded-lg items-center justify-center gap-4 max-sm:w-full"
     >
       <img src="/img/hero/spock.webp" alt="Spock" class="h-[75px]" />
       <div class="w-[217px] h-auto">
@@ -50,7 +20,7 @@ const technologies: Technology[] = [
         <p class="m-0 font-medium">JavaScript developer.</p>
       </div>
     </article>
-    <div class="flex gap-3 mt-6">
+    <div class="flex gap-3 mt-6 max-sm:hidden">
       {
         technologies.map((technology) => (
           <img
