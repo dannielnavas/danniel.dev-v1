@@ -3,7 +3,7 @@ const { count, title } = Astro.props;
 ---
 
 <article
-  class="min-w-[501px] min-h-[117px] bg-white rounded-lg flex justify-center items-center gap-8"
+  class="max-lg:min-w-[501px] min-h-[117px] bg-white rounded-lg flex justify-center items-center gap-8 max-sm:w-4/6"
 >
   <span class="text-[#7AEC51] text-2xl font-bold m-0 w-auto">{count}</span>
   <h4 class="font-normal leading-7 m-0 w-auto">{title}</h4>
