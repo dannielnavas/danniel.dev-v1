@@ -23,18 +23,22 @@ const socialMedia = [
 ];
 ---
 
-<footer class="w-svw h-40 bg-white flex mt-6 justify-end items-center gap-4">
+<footer
+  class="w-svw h-40 bg-white flex mt-6 justify-center flex-col items-center gap-4"
+>
   <p>DannielDev {new Date().getFullYear()}.</p>
-  {
-    socialMedia.map((social) => (
-      <a
-        href={social.url}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label={social.name}
-      >
-        <img src={social.icon} alt={social.name} loading="lazy" />
-      </a>
-    ))
-  }
+  <section class="flex gap-4">
+    {
+      socialMedia.map((social) => (
+        <a
+          href={social.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={social.name}
+        >
+          <img src={social.icon} alt={social.name} loading="lazy" />
+        </a>
+      ))
+    }
+  </section>
 </footer>
