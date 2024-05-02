@@ -4,13 +4,9 @@ const { image, title, description, url } = Astro.props;
 
 <a href={url} rel="noopener noreferrer" aria-label={title}>
   <article
-    class="flex bg-white w-[1044px] h-[165px] p-6 rounded-lg gap-4 max-sm:flex-col max-sm:h-auto max-sm:p-4 max-sm:w-4/5"
+    class="flex bg-white w-[1044px] h-[165px] p-6 rounded-lg gap-4 max-sm:flex-col max-sm:h-auto max-sm:p-4 max-sm:w-4/5 sm:w-full lg:w-[1033px]"
   >
-    <img
-      src={image}
-      alt={title}
-      class="rounded-lg min-w-[335px] max-sm:w-full max-sm:h-auto max-sm:relative max-sm:rounded-t-lg max-sm:rounded-b-lg"
-    />
+    <img src={image} alt={title} class="rounded-lg" />
     <div class="">
       <h2 class="text-2xl font-bold text-balance">
         {title}
