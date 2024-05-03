@@ -7,15 +7,21 @@ import Project from "../Project.astro";
 const { limit } = Astro.props;
 const projects: IProject[] = await getProjectsGithub();
 console.log(projects);
-const filterProjects = typeof projects === "object" ? [] : (projects as IProject[]);
+let filterProjects = (projects as IProject[]).filter((project: IProject) => {
+  if (
+    project.homepage &&
+    project.homepage !== "" &&
+    !(project.homepage ?? "").includes("danniel.dev")
+  ) {
+    return project;
+  }
+});
 filterProjects.sort(
   (a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
 );
 
-console.log(filterProjects);
-
-if (Number(limit) > 0) {
-  filterProjects.splice(0, limit);
+if (Number(limit) !== 0) {
+  filterProjects = filterProjects.slice(0, limit);
 }
 ---
 
