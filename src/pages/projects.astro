@@ -1,4 +1,6 @@
 ---
+import Footer from "@/components/Footer.astro";
+import ListProjects from "@/components/list/ListProjects.astro";
 import Layout from "@/layout/Layout.astro";
 ---
 
@@ -7,5 +9,8 @@ import Layout from "@/layout/Layout.astro";
   title="Proyectos Destacados de Daniel Navas | Danniel DEV"
   canonical="https://danniel.dev/projects"
 >
-  <main>most recent projects</main>
+  <main class="bg-[#102742] max-sm:px-4">
+    <ListProjects limit="0" />
+  </main>
+  <Footer />
 </Layout>
