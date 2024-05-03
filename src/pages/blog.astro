@@ -1,4 +1,6 @@
 ---
+import Footer from "@/components/Footer.astro";
+import ListsAticles from "@/components/list/ListsAticles.astro";
 import Layout from "@/layout/Layout.astro";
 ---
 
@@ -7,5 +9,8 @@ import Layout from "@/layout/Layout.astro";
   title="El Rincón de Daniel Navas | Danniel DEV: Explorando el Desarrollo de Software"
   canonical="https://danniel.dev/blog"
 >
-  <main>most recent posts</main>
+  <main class="bg-[#102742] max-sm:px-4">
+    <ListsAticles numberItems="300" />
+  </main>
+  <Footer />
 </Layout>
