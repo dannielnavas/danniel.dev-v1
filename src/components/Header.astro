@@ -25,10 +25,11 @@ const menu: Menu[] = [
 <nav
   class="flex justify-between items-center bg-[#102742] text-white p-1 container mx-auto my-auto"
 >
-  <div class="flex items-center">
+  <a href="/" target="_blank" rel="noopener noreferrer" class="flex items-center">
     <Logo class="w-14" />
-    <h1 class="ml-1">Danniel Dev</h1>
-  </div>
+    <h1 class="ml-1 text-3xl">Danniel Dev</h1>
+  </a>
+
   <menu class="flex justify-between items-center gap-5 max-sm:hidden">
     {
       menu.map(({ name, url }) => (
