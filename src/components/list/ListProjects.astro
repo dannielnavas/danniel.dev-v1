@@ -29,7 +29,7 @@ if (Number(limit) !== 0) {
   <h2 class="text-3xl font-bold text-center mb-4 mt-8 text-[#7AEC51]">Proyectos</h2>
   <div class="flex flex-wrap justify-evenly gap-6 container mx-auto my-auto">
     {
-      filterProjects.map((project: IProject) => (
+      filterProjects.map((project: IProject, index: number) => (
         <Project
           key={project.id}
           name={project.name}
@@ -37,6 +37,7 @@ if (Number(limit) !== 0) {
           description={project.description}
           html_url={project.html_url}
           homepage={project.homepage}
+          index={index + 1}
         />
       ))
     }
