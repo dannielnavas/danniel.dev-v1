@@ -1,5 +1,5 @@
 ---
-const { name, created_at, description, html_url, homepage } = Astro.props;
+const { name, created_at, description, html_url, homepage, index } = Astro.props;
 
 const date = new Date(created_at);
 const utc = date.getTime() + date.getTimezoneOffset() * 60000;
@@ -11,7 +11,7 @@ const newDate = colombia.toISOString().split("T")[0];
 <article class="flex flex-col w-[240px] h-auto">
   <h3 class="text-2xl text-white font-extrabold capitalize">{name}</h3>
   <p class="text-[#7AEC51] mt-2">{newDate}</p>
-  <p class="text-balance mt-6 text-white">{description}</p>
+  <p class="text-balance mt-6 text-white h-44 truncate">{description}</p>
   <div class="flex gap-4 mt-4">
     <a
       href={html_url}
@@ -19,10 +19,18 @@ const newDate = colombia.toISOString().split("T")[0];
       rel="noopener noreferrer"
       aria-label={"Github"}
     >
-      <img src="/img/projects/github.webp" loading="lazy" alt="github project" />
+      <img
+        src="/img/projects/github.webp"
+        loading={index > 4 ? "lazy" : "eager"}
+        alt="github project"
+      />
     </a>
     <a href={homepage} target="_blank" rel="noopener noreferrer" aria-label="Shared">
-      <img src="/img/projects/shared.webp" loading="lazy" alt="shared project" />
+      <img
+        src="/img/projects/shared.webp"
+        loading={index > 4 ? "lazy" : "eager"}
+        alt="shared project"
+      />
     </a>
   </div>
 </article>
