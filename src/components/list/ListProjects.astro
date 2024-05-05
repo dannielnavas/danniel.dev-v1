@@ -6,7 +6,7 @@ import Project from "../Project.astro";
 
 const { limit } = Astro.props;
 const projects: IProject[] = await getProjectsGithub();
-console.log(projects);
+
 let filterProjects = (projects as IProject[]).filter((project: IProject) => {
   if (
     project.homepage &&
