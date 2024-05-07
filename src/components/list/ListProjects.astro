@@ -3,6 +3,7 @@ import { getProjectsGithub } from "@/functions/projets";
 
 import type { IProject } from "@/shared/models/project.interface";
 import Project from "../Project.astro";
+import List from "./List.astro";
 
 const { limit } = Astro.props;
 const projects: IProject[] = await getProjectsGithub();
@@ -25,8 +26,7 @@ if (Number(limit) !== 0) {
 }
 ---
 
-<div class="flex flex-col">
-  <h2 class="text-3xl font-bold text-center mb-4 mt-8 text-[#7AEC51]">Proyectos</h2>
+<List styles="flex flex-col" title="Proyectos">
   <div class="flex flex-wrap justify-evenly gap-6 container mx-auto my-auto">
     {
       filterProjects.map((project: IProject, index: number) => (
@@ -42,4 +42,4 @@ if (Number(limit) !== 0) {
       ))
     }
   </div>
-</div>
+</List>
