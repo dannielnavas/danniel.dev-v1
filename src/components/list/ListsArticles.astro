@@ -1,0 +1,29 @@
+---
+import { getArticlesDevto } from "@/functions/articles";
+import type { IArticle } from "@/shared/models/article.interface";
+import Article from "../Article.astro";
+import List from "./List.astro";
+
+const articles: IArticle[] = await getArticlesDevto();
+
+const { numberItems } = Astro.props;
+---
+
+<List
+  styles="flex flex-col justify-center items-center gap-6 container mx-auto my-auto"
+  title="Artículos Recientes"
+>
+  {
+    articles
+      .slice(0, Number(numberItems))
+      .map((article) => (
+        <Article
+          key={article.id}
+          title={article.title}
+          description={article.description}
+          image={article.cover_image}
+          url={article.url}
+        />
+      ))
+  }
+</List>
