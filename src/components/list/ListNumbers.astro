@@ -2,16 +2,14 @@
 import { getNumbers } from "@/functions/numbers";
 import type { INumbers } from "@/shared/models/numbers.interface";
 import Card from "../Card.astro";
+import List from "./List.astro";
 
 const numbersDannielDev = await getNumbers();
 
 numbersDannielDev.sort((a, b) => b.quantity - a.quantity);
 ---
 
-<div class="flex flex-col items-center">
-  <h2 class="text-3xl font-bold text-center mb-4 mt-8 text-[#7AEC51]">
-    Estadísticas
-  </h2>
+<List styles="flex flex-col items-center" title="Estadísticas">
   <div class="flex gap-6 container mx-auto my-auto flex-wrap justify-center">
     {
       numbersDannielDev.map((project: INumbers, index: number) => (
@@ -19,4 +17,4 @@ numbersDannielDev.sort((a, b) => b.quantity - a.quantity);
       ))
     }
   </div>
-</div>
+</List>
