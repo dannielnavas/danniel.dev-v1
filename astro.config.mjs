@@ -8,4 +8,8 @@ import robotsTxt from "astro-robots-txt";
 export default defineConfig({
   site: "https://danniel.dev/",
   integrations: [tailwind(), sitemap(), robotsTxt()],
+  output: "server",
+  adapter: vercel({
+    webAnalytics: { enabled: true },
+  }),
 });
