@@ -1,36 +1,38 @@
 ---
-const { name, created_at, description, html_url, homepage, index } = Astro.props;
+import type { IProject } from "@/shared/models/project.interface";
 
-const date = new Date(created_at);
-const utc = date.getTime() + date.getTimezoneOffset() * 60000;
-const offset = -5;
-const colombia = new Date(utc + 3600000 * offset);
-const newDate = colombia.toISOString().split("T")[0];
+const { project } = Astro.props as { project: IProject };
+
+const { name, description, technologies, github, live, image } = project;
 ---
 
-<article class="flex flex-col w-[240px] h-auto">
-  <h3 class="text-2xl text-white font-extrabold capitalize">{name}</h3>
-  <p class="text-[#7AEC51] mt-2">{newDate}</p>
-  <p class="text-balance mt-6 text-white h-44 truncate">{description}</p>
-  <div class="flex gap-4 mt-4">
-    <a
-      href={html_url}
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label={"Github"}
+<div class="px-2 py-20 w-full flex justify-center">
+  <div class="bg-white lg:mx-8 lg:flex lg:max-w-5xl lg:shadow-lg rounded-lg">
+    <div class="lg:w-1/2">
+      <div
+        class="lg:scale-110 h-80 bg-cover lg:h-full rounded-b-none border lg:rounded-lg w-[490px] bg-center bg-no-repeat"
+        style={"background-image:url('" + image + "')"}
+      >
+      </div>
+    </div>
+    <div
+      class="py-12 px-6 lg:px-12 max-w-xl lg:max-w-5xl lg:w-1/2 rounded-t-none border lg:rounded-lg"
     >
-      <img
-        src="/img/projects/github.webp"
-        loading={index > 4 ? "lazy" : "eager"}
-        alt="github project"
-      />
-    </a>
-    <a href={homepage} target="_blank" rel="noopener noreferrer" aria-label="Shared">
-      <img
-        src="/img/projects/shared.webp"
-        loading={index > 4 ? "lazy" : "eager"}
-        alt="shared project"
-      />
-    </a>
+      <h2 class="text-3xl text-gray-800 font-bold">
+        {name}
+      </h2>
+      {technologies.map((tech) => <span class="text-indigo-600"> {tech}</span>)}
+      <p class="mt-4 text-gray-600">
+        {description}
+      </p>
+      <div class="mt-8">
+        <a
+          href={live}
+          target="_blank"
+          class="bg-gray-900 text-gray-100 px-5 py-3 font-semibold rounded"
+          >Visitar</a
+        >
+      </div>
+    </div>
   </div>
-</article>
+</div>

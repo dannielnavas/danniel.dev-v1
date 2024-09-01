@@ -1,44 +1,17 @@
 ---
-import { getProjectsGithub } from "@/functions/projets";
-
+import { PROJECTS } from "@/shared/const/projects.const";
 import type { IProject } from "@/shared/models/project.interface";
 import Project from "../Project.astro";
 import List from "./List.astro";
 
-const { limit } = Astro.props;
-const projects: IProject[] = await getProjectsGithub();
-
-let filterProjects = (projects as IProject[]).filter((project: IProject) => {
-  if (
-    project.homepage &&
-    project.homepage !== "" &&
-    !(project.homepage ?? "").includes("danniel.dev")
-  ) {
-    return project;
-  }
-});
-filterProjects.sort(
-  (a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
-);
-
-if (Number(limit) !== 0) {
-  filterProjects = filterProjects.slice(0, limit);
-}
+const projects: IProject[] = PROJECTS;
 ---
 
 <List styles="flex flex-col" title="Proyectos">
   <div class="flex flex-wrap justify-evenly gap-6 container mx-auto my-auto">
     {
-      filterProjects.map((project: IProject, index: number) => (
-        <Project
-          key={project.id}
-          name={project.name}
-          created_at={project.created_at}
-          description={project.description}
-          html_url={project.html_url}
-          homepage={project.homepage}
-          index={index + 1}
-        />
+      projects.map((project: IProject, index: number) => (
+        <Project key={index} project={project} />
       ))
     }
   </div>
