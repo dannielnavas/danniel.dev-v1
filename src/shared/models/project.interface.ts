@@ -5,4 +5,5 @@ export interface IProject {
   github: string;
   live: string;
   image: string;
+  button: string;
 }

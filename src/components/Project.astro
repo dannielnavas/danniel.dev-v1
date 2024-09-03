@@ -3,14 +3,14 @@ import type { IProject } from "@/shared/models/project.interface";
 
 const { project } = Astro.props as { project: IProject };
 
-const { name, description, technologies, github, live, image } = project;
+const { name, description, technologies, github, live, image, button } = project;
 ---
 
-<div class="px-2 py-20 w-full flex justify-center">
+<div class="px-2 py-5 w-full flex justify-center">
   <div class="bg-white lg:mx-8 lg:flex lg:max-w-5xl lg:shadow-lg rounded-lg">
     <div class="lg:w-1/2">
       <div
-        class="lg:scale-110 h-80 bg-cover lg:h-full rounded-b-none border lg:rounded-lg w-[490px] bg-center bg-no-repeat"
+        class="lg:scale-110 h-80 bg-cover lg:h-full rounded-b-none border lg:rounded-lg lg:w-[490px] bg-center bg-no-repeat bg-position-center"
         style={"background-image:url('" + image + "')"}
       >
       </div>
@@ -30,7 +30,7 @@ const { name, description, technologies, github, live, image } = project;
           href={live}
           target="_blank"
           class="bg-gray-900 text-gray-100 px-5 py-3 font-semibold rounded"
-          >Visitar</a
+          >{button}</a
         >
       </div>
     </div>
