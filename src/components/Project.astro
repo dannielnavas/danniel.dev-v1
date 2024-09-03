@@ -26,11 +26,19 @@ const { name, description, technologies, github, live, image, button } = project
         {description}
       </p>
       <div class="mt-8">
+        <!-- Button call to action -->
         <a
           href={live}
           target="_blank"
-          class="bg-gray-900 text-gray-100 px-5 py-3 font-semibold rounded"
+          class="bg-indigo-400 text-gray-100 px-5 py-3 font-semibold rounded"
           >{button}</a
+        >
+        <!-- button github -->
+        <a
+          href={github}
+          target="_blank"
+          class="bg-gray-900 text-gray-100 px-5 py-3 font-semibold rounded ml-4"
+          >Github</a
         >
       </div>
     </div>
