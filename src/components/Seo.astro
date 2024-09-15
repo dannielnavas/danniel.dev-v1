@@ -41,9 +41,6 @@ const canonicalURL = canonical
 
 <meta name="description" content={description} />
 
-<!-- <link rel="preload" href={atomic} as="font" type="font/woff2" crossorigin /> -->
-<!-- <link rel="preload" href={jost} as="font" type="font/woff2" crossorigin /> -->
-
 {
   preload?.map(({ href, as, type, rel = "preload", crossorigin }) => (
     <link {rel} {href} {as} {type} {crossorigin} />
