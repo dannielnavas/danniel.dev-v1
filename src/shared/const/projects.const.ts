@@ -25,7 +25,7 @@ export const PROJECTS: IProject[] = [
     name: "tripix",
     description:
       "Aplicación web para expectativa de futura app de generación de itinerario de vacaciones generado con IA.",
-    technologies: ["React", "TypeScript", "Tailwind CSS"],
+    technologies: ["VueJs", "TypeScript", "Tailwind CSS", "AstroJS"],
     github: "https://github.com/dannielnavas/vacations",
     live: "https://tripix.danniel.dev/",
     image: "/img/projects/vacations.jpeg",
