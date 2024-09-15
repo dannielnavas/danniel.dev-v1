@@ -21,4 +21,14 @@ export const PROJECTS: IProject[] = [
     image: "/img/projects/podcastrek.jpeg",
     button: "Descargar APK",
   },
+  {
+    name: "tripix",
+    description:
+      "Aplicación web para expectativa de futura app de generación de itinerario de vacaciones generado con IA.",
+    technologies: ["React", "TypeScript", "Tailwind CSS"],
+    github: "https://github.com/dannielnavas/vacations",
+    live: "https://tripix.danniel.dev/",
+    image: "/img/projects/vacations.jpeg",
+    button: "Ver proyecto",
+  },
 ];
