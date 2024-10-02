@@ -5,6 +5,8 @@ import Project from "../Project.astro";
 import List from "./List.astro";
 
 const projects: IProject[] = PROJECTS;
+
+const { limit } = Astro.props;
 ---
 
 <List styles="flex flex-col" title="Proyectos">
@@ -12,7 +14,7 @@ const projects: IProject[] = PROJECTS;
     {
       projects.map((project: IProject, index: number) => (
         <Project key={index} project={project} />
-      ))
+      )).slice(0, limit)
     }
   </div>
 </List>
