@@ -17,7 +17,7 @@ export const PROJECTS: IProject[] = [
       "Aplicación para android que permite escuchar el podcast llamado el lavadero sonico que pertenece a la comunidad de star trek Colombia.",
     technologies: ["react-native", "javascript", "Expo", "nestjs"],
     github: "https://github.com/dannielnavas/danniel.dev-v1",
-    live: "https://drive.google.com/file/d/1VHY0oBA28S36chXDurKSct_nqFAnUHzR/view?usp=drive_link",
+    live: "https://github.com/dannielnavas/podcasttreknext/releases",
     image: "/img/projects/podcastrek.jpeg",
     button: "Descargar APK",
   },
