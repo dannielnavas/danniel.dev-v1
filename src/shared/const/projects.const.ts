@@ -8,7 +8,7 @@ export const PROJECTS: IProject[] = [
     technologies: ["VueJs", "TypeScript", "Tailwind CSS", "nestjs"],
     github: "https://github.com/dannielnavas/podcasttreknext",
     live: "https://devtospanish.danniel.dev",
-    image: "/img/projects/devtospanish.jpeg",
+    image: "/img/projects/devtospanish.webp",
     button: "Ver proyecto",
   },
   {
@@ -18,7 +18,7 @@ export const PROJECTS: IProject[] = [
     technologies: ["react-native", "javascript", "Expo", "nestjs"],
     github: "https://github.com/dannielnavas/danniel.dev-v1",
     live: "https://github.com/dannielnavas/podcasttreknext/releases",
-    image: "/img/projects/podcastrek.jpeg",
+    image: "/img/projects/podcastrek.webp",
     button: "Descargar APK",
   },
   {
@@ -35,7 +35,7 @@ export const PROJECTS: IProject[] = [
     ],
     github: "https://github.com/dannielnavas/vacations",
     live: "https://tripix.danniel.dev/",
-    image: "/img/projects/vacations.jpeg",
+    image: "/img/projects/vacations.webp",
     button: "Ver proyecto",
   },
   {
@@ -45,7 +45,7 @@ export const PROJECTS: IProject[] = [
     technologies: ["Angular", "TypeScript", "Tailwind CSS", "mongoDB", "nestjs"],
     github: "https://github.com/dannielnavas/danniel-link-frontend",
     live: "https://lk.danniel.dev",
-    image: "/img/projects/lk.danniel.dev.png",
+    image: "/img/projects/lk.danniel.dev.webp",
     button: "Ver proyecto",
   },
 ];
