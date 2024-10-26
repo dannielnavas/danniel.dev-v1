@@ -4,34 +4,34 @@ export const PROJECTS: IProject[] = [
   {
     name: "DevtoSpanish",
     description:
-      "Plataforma que centraliza los artículos escritos en español en la plataforma https://dev.to .",
-    technologies: ["VueJs", "TypeScript", "Tailwind CSS", "nestjs"],
+      "Una plataforma que centraliza los artículos escritos en español publicados en la comunidad de desarrollo https://dev.to.",
+    technologies: ["VueJs", "TypeScript", "Tailwind CSS", "NestJS"],
     github: "https://github.com/dannielnavas/podcasttreknext",
     live: "https://devtospanish.danniel.dev",
     image: "/img/projects/devtospanish.webp",
     button: "Ver proyecto",
   },
   {
-    name: "podcastrek",
+    name: "Podcastrek",
     description:
-      "Aplicación para android que permite escuchar el podcast llamado el lavadero sonico que pertenece a la comunidad de star trek Colombia.",
-    technologies: ["react-native", "javascript", "Expo", "nestjs"],
+      "Aplicación para Android que permite escuchar el podcast 'El Lavadero Sónico', perteneciente a la comunidad de Star Trek Colombia.",
+    technologies: ["React Native", "JavaScript", "Expo", "NestJS"],
     github: "https://github.com/dannielnavas/danniel.dev-v1",
     live: "https://github.com/dannielnavas/podcasttreknext/releases",
     image: "/img/projects/podcastrek.webp",
     button: "Descargar APK",
   },
   {
-    name: "tripix",
+    name: "Tripix",
     description:
-      "Aplicación web para expectativa de futura app de generación de itinerario de vacaciones generado con IA.",
+      "Aplicación web que proyecta una futura plataforma de generación de itinerarios de vacaciones optimizados mediante IA.",
     technologies: [
       "VueJs",
       "TypeScript",
       "Tailwind CSS",
       "AstroJS",
-      "mongoDB",
-      "nestjs",
+      "MongoDB",
+      "NestJS",
     ],
     github: "https://github.com/dannielnavas/vacations",
     live: "https://tripix.danniel.dev/",
@@ -41,8 +41,8 @@ export const PROJECTS: IProject[] = [
   {
     name: "lk",
     description:
-      "Sitio para acortar enlaces de manera personalizada y con estadísticas básicas de uso.",
-    technologies: ["Angular", "TypeScript", "Tailwind CSS", "mongoDB", "nestjs"],
+      "Sitio para acortar enlaces de manera personalizada, con estadísticas básicas de uso para el análisis de enlaces.",
+    technologies: ["NestJS", "TypeScript", "CSS", "MongoDB", "PUG"],
     github: "https://github.com/dannielnavas/danniel-link-frontend",
     live: "https://lk.danniel.dev",
     image: "/img/projects/lk.danniel.dev.webp",
