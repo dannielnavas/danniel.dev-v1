@@ -43,7 +43,7 @@ export const PROJECTS: IProject[] = [
     description:
       "Sitio para acortar enlaces de manera personalizada, con estadísticas básicas de uso para el análisis de enlaces.",
     technologies: ["NestJS", "TypeScript", "CSS", "MongoDB", "PUG"],
-    github: "https://github.com/dannielnavas/danniel-link-frontend",
+    github: "https://github.com/dannielnavas/danniel-link",
     live: "https://lk.danniel.dev",
     image: "/img/projects/lk.danniel.dev.webp",
     button: "Ver proyecto",
