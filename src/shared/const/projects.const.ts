@@ -48,4 +48,14 @@ export const PROJECTS: IProject[] = [
     image: "/img/projects/lk.danniel.dev.webp",
     button: "Ver proyecto",
   },
+  {
+    name: "qr",
+    description:
+      "Generador de códigos QR personalizados con la posibilidad de descargarlos en formato PNG.",
+    technologies: ["NestJS", "TypeScript", "SCSS", "Angular", "JavaScript"],
+    github: "",
+    live: "https://qr.danniel.dev",
+    image: "/img/projects/qr.danniel.dev.webp",
+    button: "Ver proyecto",
+  },
 ];
