@@ -8,7 +8,7 @@ const technologies: Technology[] = TECHNOLOGIES;
 
 <header class="flex bg-[#102742] container mx-auto my-auto">
   <section
-    class="flex flex-col lg:w-1/2 max-sm:w-full md:w-svw md:mt-8 max-sm:mt-8 justify-center items-center"
+    class="flex flex-col lg:w-1/2 max-sm:w-full md:w-svw md:mt-8 max-sm:mt-8 justify-center items-center md:mx-auto sm:mx-auto"
   >
     <article
       class="bg-white flex h-[140px] w-[436px] rounded-lg items-center justify-center gap-4 max-sm:w-full"
@@ -20,7 +20,7 @@ const technologies: Technology[] = TECHNOLOGIES;
         <p class="m-0 font-medium">JavaScript developer.</p>
       </div>
     </article>
-    <div class="flex gap-3 mt-6 max-sm:hidden">
+    <div class="flex gap-3 mt-6 flex-wrap">
       {
         technologies.map((technology) => (
           <img
