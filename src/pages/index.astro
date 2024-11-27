@@ -15,8 +15,8 @@ import Layout from "@/layout/Layout.astro";
 >
   <main class="bg-[#102742] max-sm:px-4">
     <Hero />
-    <ListsAticles numberItems="3" />
     <ListProjects limit="3" />
+    <ListsAticles numberItems="3" />
     <ListVideo />
     <ListNumbers />
   </main>
@@ -24,19 +24,22 @@ import Layout from "@/layout/Layout.astro";
 </Layout>
 
 <style is:global>
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+  @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
+  p,
+  span {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
 
-p, span {
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-h1, h2, h3, h4, h5 {
-  font-family: "Roboto", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-}
-
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
 </style>

@@ -1,7 +1,8 @@
 ---
-import type { IProject } from "@/shared/models/project.interface";
+import Code from "./icons/Code.astro";
+import Send from "./icons/Send.astro";
 
-const { project } = Astro.props as { project: IProject };
+const { project } = Astro.props;
 
 const { name, description, technologies, github, live, image, button } = project;
 ---
@@ -10,7 +11,7 @@ const { name, description, technologies, github, live, image, button } = project
   <div class="bg-white lg:mx-8 lg:flex lg:max-w-5xl lg:shadow-lg rounded-lg">
     <div class="lg:w-1/2">
       <div
-        class="lg:scale-110 h-80 bg-cover lg:h-full rounded-b-none border lg:rounded-lg lg:w-[490px] bg-center bg-no-repeat bg-position-center"
+        class="lg:scale-110 h-80 bg-cover lg:h-full rounded-b-none border lg:rounded-lg lg:w-[490px] bg-center bg-no-repeat bg-position-center lg:bg-cover"
         style={"background-image:url('" + image + "')"}
       >
       </div>
@@ -21,7 +22,18 @@ const { name, description, technologies, github, live, image, button } = project
       <h2 class="text-3xl text-gray-800 font-bold">
         {name}
       </h2>
-      {technologies.map((tech) => <span class="text-indigo-600"> {tech}</span>)}
+      <section class="flex flex-row gap-2 flex-wrap">
+        {
+          technologies.map((tech: { class: string; icon: any; name: string }) => (
+            <span
+              class={`flex gap-x-2 rounded-full text-xs ${tech.class} py-1 px-2 `}
+            >
+              <tech.icon class="size-4" />
+              {tech.name}
+            </span>
+          ))
+        }
+      </section>
       <p class="mt-4 text-gray-600">
         {description}
       </p>
@@ -30,16 +42,21 @@ const { name, description, technologies, github, live, image, button } = project
         <a
           href={live}
           target="_blank"
-          class="bg-indigo-400 text-gray-100 px-5 py-3 font-semibold rounded"
-          >{button}</a
+          role="link"
+          class="inline-flex items-center justify-center gap-2 px-3 py-2 space-x-2 text-base transition text-white bg-gray-800 border border-gray-600 focus-visible:ring-yellow-500/80 text-md hover:bg-gray-900 hover:border-gray-900 group max-w-fit rounded-xl hover:text-white focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-offset-2 active:bg-black"
         >
+          <Send class="size-4" />
+          {button}
+        </a>
         <!-- button github -->
         <a
           href={github}
           target="_blank"
-          class="bg-gray-900 text-gray-100 px-5 py-3 font-semibold rounded ml-4"
-          >Github</a
+          class="inline-flex items-center justify-center gap-2 px-3 py-2 space-x-2 text-base transition text-white bg-gray-800 border border-gray-600 focus-visible:ring-yellow-500/80 text-md hover:bg-gray-800 hover:border-gray-900 group max-w-fit rounded-xl hover:text-white focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-offset-2 active:bg-black"
         >
+          <Code class="size-4" />
+          Código
+        </a>
       </div>
     </div>
   </div>
