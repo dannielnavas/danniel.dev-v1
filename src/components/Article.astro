@@ -10,9 +10,13 @@ const { image, title, description, time, url } = Astro.props;
   class="flex justify-center"
 >
   <article
-    class="flex bg-white w-[1044px] h-[165px] p-6 rounded-lg gap-4 max-sm:flex-col max-sm:h-auto max-sm:p-4 max-sm:w-4/5 sm:w-full lg:w-[1033px]"
+    class="flex bg-white w-[1044px] h-[165px] p-6 rounded-lg gap-4 max-sm:flex-col max-sm:h-auto max-sm:p-4 max-sm:w-4/5 sm:w-full lg:w-[1033px] group"
   >
-    <img src={image} alt={title} class="rounded-lg" />
+    <img
+      src={image}
+      alt={title}
+      class="rounded-xl object-cover shadow-xl transition group-hover:grayscale-[50%]"
+    />
     <div class="">
       <h2 class="text-2xl font-bold text-balance">
         {title}
