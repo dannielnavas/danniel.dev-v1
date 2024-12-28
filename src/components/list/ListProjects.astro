@@ -12,9 +12,11 @@ const { limit } = Astro.props;
 <List styles="flex flex-col" title="Proyectos">
   <div class="flex flex-wrap justify-evenly gap-6 container mx-auto my-auto">
     {
-      projects.map((project: IProject, index: number) => (
-        <Project key={index} project={project} />
-      )).slice(0, limit)
+      projects
+        .map((project: IProject, index: number) => (
+          <Project key={index} project={project} />
+        ))
+        .slice(0, limit)
     }
   </div>
 </List>
