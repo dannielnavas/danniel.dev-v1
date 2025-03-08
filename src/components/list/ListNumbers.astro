@@ -12,7 +12,7 @@ numbersDannielDev.sort((a, b) => b.quantity - a.quantity);
 <List styles="flex flex-col items-center" title="Estadísticas">
   <div class="flex gap-6 container mx-auto my-auto flex-wrap justify-center">
     {
-      numbersDannielDev.map((project: INumbers, index: number) => (
+      numbersDannielDev?.map((project: INumbers, index: number) => (
         <Card key={index} title={project.name} count={project.quantity} />
       ))
     }

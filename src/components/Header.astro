@@ -31,26 +31,26 @@ const menu: Menu[] = [
     <h1 class="ml-1 text-3xl">Danniel Dev</h1>
   </a>
 
-  <label for="menu-toggle" class="cursor-pointer sm:hidden p-2">
+  <label for="menu-toggle" class="cursor-pointer sm:hidden p-2" id="menu">
     <Icon name="ph:hamburger" id="menu-toggle" />
   </label>
 
   <menu
     id="menuSelector"
-    class="hidden absolute top-16 right-3 bg-[#102742] p-4 flex-col border-cyan-400 border-2 rounded-lg"
+    class="hidden absolute top-16 right-3 bg-[#102742] p-4 flex-col border-cyan-400 border-2 rounded-lg w-1/2 h-auto"
   >
     {
       menu.map(({ name, url }) => (
-        <li class="list-none mr-1 ml-1">
-          <a
-            href={url}
-            class="no-underline text-white"
-            rel="noopener noreferrer"
-            aria-label={name}
-          >
-            {name}
-          </a>
-        </li>
+        <a
+          href={url}
+          class="no-underline text-white w-full"
+          rel="noopener noreferrer"
+          aria-label={name}
+        >
+          <li class="list-none mr-1 ml-1 p-3 bg-sky-800 mb-2 rounded-md hover:bg-sky-700 hover:text-cyan-400">
+            <span>{name}</span>
+          </li>
+        </a>
       ))
     }
   </menu>
@@ -74,10 +74,11 @@ const menu: Menu[] = [
   </menu>
 </nav>
 <script>
-  const menuIcon = document.getElementById("menuIcon");
-  const menu = document.getElementById("menuSelector");
-
+  const menuIcon = document.querySelector("#menu-toggle");
+  const menu = document.querySelector("#menuSelector");
+  console.log(menuIcon, menu);
   menuIcon?.addEventListener("click", () => {
+    console.log("click");
     if (menu?.classList.contains("hidden")) {
       menu.classList.remove("hidden");
     } else {
