@@ -31,9 +31,7 @@ const menu: Menu[] = [
     <h1 class="ml-1 text-3xl">Danniel Dev</h1>
   </a>
 
-  <label for="menu-toggle" class="cursor-pointer sm:hidden p-2" id="menu">
-    <Icon name="ph:hamburger" id="menu-toggle" />
-  </label>
+  <Icon name="ph:hamburger" id="menu-toggle" class="cursor-pointer sm:hidden w-10" />
 
   <menu
     id="menuSelector"
@@ -74,15 +72,23 @@ const menu: Menu[] = [
   </menu>
 </nav>
 <script>
-  const menuIcon = document.querySelector("#menu-toggle");
+  const menuIcon = document.querySelector("#menu-toggle"); // Cambiamos el selector al ID del label
   const menu = document.querySelector("#menuSelector");
-  console.log(menuIcon, menu);
+  const menuLinks = document.querySelectorAll("#menuSelector a");
+
+  if (!menuIcon || !menu) {
+    console.error("No se encontraron los elementos del menú");
+  }
+
   menuIcon?.addEventListener("click", () => {
-    console.log("click");
-    if (menu?.classList.contains("hidden")) {
-      menu.classList.remove("hidden");
-    } else {
+    console.log("Click en menú");
+    console.log("Estado actual del menú:", menu?.classList.contains("hidden"));
+    menu?.classList.toggle("hidden");
+  });
+
+  menuLinks.forEach((link) => {
+    link.addEventListener("click", () => {
       menu?.classList.add("hidden");
-    }
+    });
   });
 </script>
